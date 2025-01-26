@@ -2,11 +2,13 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "Namste React tut",
-  
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
-    "test": "jest"
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "parcel example/index.html --no-cache",
+    "patch": "npm version patch --no-git-tag-version",
+    "minor": "npm version minor --no-git-tag-version",
+    "major": "npm version major --no-git-tag-version"
   },
   "repository": {
     "type": "git",
@@ -22,10 +24,14 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.13.3",
-    "process": "^0.11.10"
+    "postcss": "^8.5.1",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  }
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.1"
+  },
+  "main": "Index.js"
 }
