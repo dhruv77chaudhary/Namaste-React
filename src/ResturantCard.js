@@ -1,4 +1,5 @@
-
+import UserContext from "./UserContext";
+import { useContext } from "react";
 
 /*let reslist = [
     {
@@ -642,16 +643,18 @@
           
    ]*/
 const ResturantCard = (props)=>{
+  const {loggedInUser} = useContext(UserContext);
     
     const {resdata} = props;
     const {name,avgRating, cuisines,costForTwo,cloudinaryImageId,id}=resdata?.info
     //const {resturantname,cuisine,rating,deliverytime,img}=props;
-    return(<div className="resturant-card m-4 p-4 w-[200px] h-[400px] bg-gray-200 rounded-xl hover:bg-red-200">
+    return(<div className="resturant-card m-4 p-4 w-[200px] h-[410px] bg-gray-200 rounded-xl hover:bg-red-200">
         <img  className="resturant-logo h-[200px] w-[200px] rounded-2xl" alt ="resturant-logo"  src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+ cloudinaryImageId}/>
         <h3 className="font-bold  text-lg py-2">{name}</h3>
         <h4 className="py-1"> {"Star rating " +avgRating}</h4>
         <h4 className="py-1">{"cost for 2 " +costForTwo}</h4>
         <h4 className="py-1"> {"resturant id:"+id}</h4>
+        <h5 className="py-1 font-bold">{loggedInUser}</h5>
         
     </div>);
 };

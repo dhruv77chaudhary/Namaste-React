@@ -4,9 +4,13 @@ import {useState ,useEffect} from "react";
 import {Link} from "react-router"
 import useOnlinestatus from "./useOnlinestatus";
 import { Withavail } from "./ResturantCard";
+import { useContext } from "react";
+import UserContext from "./UserContext";
+
 
    
 const Body = ()=>{
+  const {loggedInUser,setuserInfo} = useContext(UserContext)
   
 
     
@@ -53,6 +57,11 @@ const Body = ()=>{
         );
     
         setfilteredres(filterlist)      }}>Top Rated resturants</button>
+        </div>
+        
+        <div className="m-8 p-6 ">
+        <label className="px-1">UserName </label>
+        <input className="border  border-black " value={loggedInUser} onChange={(e)=> setuserInfo(e.target.value)}></input>
         </div>
         </div>
 
